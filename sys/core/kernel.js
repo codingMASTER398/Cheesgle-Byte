@@ -195,6 +195,27 @@ window.addEventListener("message", (event) => {
   let data = event.data
   try {
     switch (data.type) {
+      case "installApp":
+        if (currentAppPermissions.includes(`manageApps`)) {
+          if (data.app) {
+            if(!apps.includes(data.app)){
+              apps.push(data.app)
+            }
+          } else console.error(`[KERNEL] App requested to install app but app wasn't provided`)
+        } else console.error(`[KERNEL] App requested to install app but app didn't have manageApps permission`)
+        break;
+      case "uninstallApp":
+        if (currentAppPermissions.includes(`manageApps`)) {
+          if (data.app) {
+            if(apps.includes(data.app)){
+              let index = apps.indexOf(data.app);
+              if (index > -1) {
+                apps.splice(index, 1);
+              }
+            }
+          } else console.error(`[KERNEL] App requested to uninstall app but app wasn't provided`)
+        } else console.error(`[KERNEL] App requested to uninstall app but app didn't have manageApps permission`)
+        break;
       case "requestReplit":
         requestReplit().then((d) => {
           if (d) {
