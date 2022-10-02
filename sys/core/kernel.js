@@ -47,7 +47,7 @@ phoneFrame.height = phone.clientHeight - 20
 let notchTime = $(`#notchTime`)[0],
   notchCellularBars = $(`#cellularBars`)[0],
   loggedInIcon = $(`.loggedInIcon`)[0],
-  notch = $(`#topNotch`)[0];
+  notch = $(`#topNotch`);
 
 function updateNotchText() {
   notchTime.innerText = `${new Date().toLocaleTimeString('default', {
