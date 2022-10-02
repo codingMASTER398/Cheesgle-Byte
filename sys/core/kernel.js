@@ -54,9 +54,32 @@ function updateNotchText() {
     minute: '2-digit',
   })} ${currentAppTitle}`;
 }
+function updateBars() {
+  let t = Date.now();
+  fetch(`https://example.com`, {
+    mode: 'no-cors'
+  }).then(() => {
+    let difference = Date.now() - t
+    if (difference < 200) notchCellularBars.innerText = `signal_cellular_4_bar`
+    else if (difference < 400) notchCellularBars.innerText = `signal_cellular_3_bar`
+    else if (difference < 600) notchCellularBars.innerText = `signal_cellular_2_bar`
+    else if (difference < 800) notchCellularBars.innerText = `signal_cellular_1_bar`
+    else notchCellularBars.innerText = `signal_cellular_0_bar`
+  }).catch(() => {
+    notchCellularBars.innerText = `signal_cellular_nodata`
+  })
 
+  if (phoneInfo.isLoggedIn) {
+    loggedInIcon.innerText = `person`
+  } else {
+    loggedInIcon.innerText = `person_off`
+  }
+}
+
+setInterval(updateBars, 10000)
 setInterval(updateNotchText, 1000)
 updateNotchText()
+updateBars()
 
 // Check if logged in
 function requestReplit() {
@@ -192,19 +215,19 @@ window.addEventListener("message", (event) => {
       case `close`:
         startApp(`/sys/apps/home`)
         break;
-      case `launchApp`:
-        if (currentAppPermissions.includes(`openOtherApps`)) {
-          if (apps.includes(data.app)) {
-            startApp(data.app)
-          } else console.error(`[KERNEL] App requested to lauch other app but other app is external or not in apps list (e.g. /sys/apps/settings)`)
-        } else console.error(`[KERNEL] App requested to lauch other app but app doesn't have the openOtherApps permission`)
-        break;
       case `openSiteOnComputer`:
         if (currentAppPermissions.includes(`openSitesOnComputer`)) {
           if (data.site) {
             window.open(data.site,'_blank')
           } else console.error(`[KERNEL] App requested to lauch site on computer, but no site was provided`)
         } else console.error(`[KERNEL] App requested to lauch site on computer, but app doesn't have the openSitesOnComputer permission`)
+        break;
+      case `launchApp`:
+        if (currentAppPermissions.includes(`openOtherApps`)) {
+          if (apps.includes(data.app)) {
+            startApp(data.app)
+          } else console.error(`[KERNEL] App requested to lauch other app but other app is external or not in apps list (e.g. /sys/apps/settings)`)
+        } else console.error(`[KERNEL] App requested to lauch other app but app doesn't have the openOtherApps permission`)
         break;
       case `setAppData`:
         localStorage.setItem(`store:${currentAppLocation}`, data.data)
