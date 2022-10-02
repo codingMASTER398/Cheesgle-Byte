@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cheesgle Byte One</title>
+  <link href="sys/styles/base.css" rel="stylesheet" type="text/css" />
+
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+  <!-- Modules -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://replit.com/public/js/repl-auth-v2.js"></script>
+
+  <!-- Scripts -->
+  <script src="sys/core/changeLoginWithReplit.js"></script>
+  <script defer src="sys/core/kernel.js"></script>
+
+  <!-- Apple -->
+  <link rel="apple-touch-icon" href="/sys/img/cheesgle.png">
+  <link rel="apple-touch-startup-image" href="/wallpapers/5.png">
+  <meta name="apple-mobile-web-app-title" content="Byte One">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property='og:title'  content='Cheesgle Byte One'>
+  <meta name='twitter:title' content='Cheesgle Byte One'>
+
+  <!-- url -->
+  <link rel='canonical'       href='https://byte.cheesgle.com/'>
+  <meta property='og:url'  content='https://byte.cheesgle.com/'>
+  <meta name='twitter:url' content='https://byte.cheesgle.com/'>
+
+  <!-- description -->
+  <meta name='description'         content='The Cheesgle Byte One is a new generation of cheesy phone built upon the same technologies as the web, and is here to serve you.'>
+  <meta property='og:description'  content='The Cheesgle Byte One is a new generation of cheesy phone built upon the same technologies as the web, and is here to serve you.'>
+  <meta name='twitter:description' content='The Cheesgle Byte One is a new generation of cheesy phone built upon the same technologies as the web, and is here to serve you.'>
+
+  <meta property='og:video' content=''>
+
+  <link rel="icon" type="image/png" href="/sys/img/cheesgle.png" />
+</head>
+
+<body>
+  <div id="phoneContainer">
+    <div id="phone">
+      <div id="topNotch">
+        <p id="notchBars"><i class="material-icons"><span class="material-symbols-outlined" id="cellularBars">
+              signal_cellular_alt_0_bar
+            </span><span class="material-symbols-outlined loggedInIcon">
+              person
+            </span></i><span class="material-symbols-outlined goHome">home</span></p>
+        <p id="notchTime">00:00</p>
+      </div>
+      <button id="bottomSwipe" hidden></button>
+      <iframe src="" allow="camera; microphone" width="400" height="300" sandbox="" id="phoneFrame">
+      </iframe>
+    </div>
+    <div class="phoneOverlay phoneOverlayBlack">
+    </div>
+    <img id="phoneCase" src="sys/physical/case.png" />
+  </div>
+  <p id="footer">by <a href="https://coding398.dev/">coding398</a>, you can tip me <a href="https://zink.tips/LachieN">here</a></p>
+  <script src="https://replit.com/public/js/replit-badge.js" theme="orange" defer></script>
+</body>
+
+</html>

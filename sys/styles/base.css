@@ -1,0 +1,161 @@
+body{
+  background: linear-gradient(156deg, rgba(255,166,0,1) 0%, rgba(235,165,34,1) 50%, rgba(227,196,140,1) 100%);;
+}
+
+#phoneContainer{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  
+  height: 70vh;
+  width: 34vh;
+}
+
+#phoneCase{
+  width:100%;
+  z-index: 2;
+  position: absolute;
+  pointer-events: none;
+}
+
+#phone{
+  height: calc(70vh - 6.6vh);
+  width: calc(34vh - 3vh);
+  left: 1.35vh;
+  top: 4vh;
+  position: absolute;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.phoneOverlay{
+  height: calc(70vh - 6.6vh - 20px);
+  width: calc(34vh - 3vh);
+  left: 1.35vh;
+  top: calc(4vh + 20px);
+  position: absolute;
+  background-color: #FBDB65;
+}
+
+.phoneOverlayBlack{
+  background-color: #000000;
+  height: calc(70vh - 6.6vh);
+  top: calc(4vh);
+}
+
+@media screen and (max-width: 600px) and (max-height: 900px) {
+  body{
+    margin:0;
+  }
+  #phoneContainer{
+    position: initial;
+    left: initial;
+    top: initial;
+    transform: initial;
+    
+    height: 100vh;
+    width: 100vw;
+  }
+  #phone{
+    height: 100vh;
+    width: 100vw;
+    left: 0%;
+    top: 0%;
+    position: absolute;
+  }
+  #phoneCase{
+    display: none;
+  }
+  .phoneOverlay{
+    height: calc(100vh - 20px);
+    width: 100vw;
+    left: 0vh;
+    top: 20px;
+    position: absolute; 
+  }
+  .phoneOverlayBlack{
+    height: 100vh;
+    top: 0vh;
+    left: 0vh;
+  }
+
+  #footer, #replit-badge{
+    display: none;
+  }
+}
+
+#topNotch{
+  width: calc(100% - 56px);
+  height: 20px;
+  background-color: #e69e19;
+  border: none;
+  padding-right: 28px;
+  padding-left: 28px;
+  color: #F5F9FC;
+  font-family: monospace;
+  display: inline-block;
+}
+
+#topNotch *{
+  margin:0;
+  line-height: 22px;
+  font-size: initial;
+  cursor: default;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#notchBars{
+  float: right;
+}
+
+.goHome{
+  animation: jiggle 30s infinite;
+  cursor: pointer !important;
+}
+
+#bottomSwipe{
+  position: absolute;
+  top: 96%;
+  width: 37.5%;
+  left: 30%;
+  height: 2%;
+  border: 1px solid black;
+  border-radius: 6px;
+}
+
+iframe{
+  border: none;
+}
+
+*[hidden]{
+  pointer-events: none;
+}
+
+@keyframes jiggle{
+  0%,50%{
+    transform: rotate(0deg);
+  }
+  51%{
+    transform: rotate(20deg);
+  }
+  53%{
+    transform: rotate(-20deg);
+  }
+  54%, 100%{
+    transform: rotate(0deg);
+  }
+}
+
+#footer{
+  position: fixed;
+  bottom: 0;
+  left: 12px;
+  font-family: system-ui;
+  color: white;
+}
+#footer a{
+  text-decoration: none;
+  color: yellow;
+}

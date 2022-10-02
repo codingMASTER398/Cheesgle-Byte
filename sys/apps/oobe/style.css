@@ -1,0 +1,130 @@
+body{
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  background-color: #FFE380;
+}
+
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative; 
+  text-align: center;
+}
+
+#splash{
+  position: relative;
+  width: 50%;
+  opacity: 0;
+}
+
+.splashFade{
+  animation: fade 3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade{
+  0%{
+    opacity: 0;
+    top: -10%;
+  }
+  70%{
+    opacity: 1;
+    top: 0;
+    left: 0%;
+  }
+  100%{
+    opacity: 0;
+    left: 50%;
+  }
+}
+
+.content{
+  text-align: center;
+  color: black;
+  padding:24px;
+  position: relative;
+  font-family: system-ui;
+  height: 85%;
+}
+
+.content h2{
+  margin: 0;
+}
+.content button{
+  width: 80%;
+  background-color: #FFB62E;
+  color: white;
+  font-size: large;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 6px;
+  transition: 0.5s;
+  padding: 6px;
+}
+
+.content button:hover{
+  background-color: #FFAE17;
+  transition: 0.5s;
+}
+.content button[disabled]{
+  background-color: #b17b16;
+  transition: 0.5s;
+}
+.bottom{
+  position: absolute;
+  bottom: 0;
+  width: calc(100% - 46px)
+}
+
+.fadeOut{
+  animation: fadeOut 0.25s;
+  animation-fill-mode: forwards;
+}
+
+.fadeIn{
+  animation: fadeIn 0.25s;
+  animation-fill-mode: forwards;
+}
+
+.spin{
+  animation: spin 1.5s linear infinite;
+}
+
+@keyframes fadeIn{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut{
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+@keyframes spin{
+  0%{
+    transform: rotate(0deg);
+  }
+  50%{
+    transform: rotate(180deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+*[hidden]{
+  display:none;
+  max-height: 0;
+}

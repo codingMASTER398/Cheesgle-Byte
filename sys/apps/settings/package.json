@@ -1,0 +1,15 @@
+{
+  "v": 0.1,
+  "title": "Settings",
+  "description": "Settings for your Cheesgle phone",
+  "author": "Cheesgle",
+  "version": 1,
+  "homepage": "",
+  "repository": "",
+
+  "icon": "icon.png",
+
+  "type": "html",
+  "entrypoint": "index.html",
+  "permissions":["sameOrigin"]
+}

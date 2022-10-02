@@ -1,0 +1,13 @@
+{
+  "v": 0,
+  "title": "Boot",
+  "description": "Boot/OOBE for Cheesgle Byte One",
+  "author": "Cheesgle",
+  "version": 1,
+  "homepage": "",
+  "repository": "",
+
+  "type": "html",
+  "entrypoint": "index.html",
+  "permissions":["sameOrigin","noHomeButton"]
+}

@@ -1,0 +1,104 @@
+body{
+  margin: 12px;
+  background-color: #FFE380;
+  font-family: system-ui;
+  color: black;
+}
+
+button{
+  width: 100%;
+  background-color: #d9ba4a;
+  color: white;
+  padding: 6px;
+  border: none;
+  border-radius: 6px;
+  text-align: left;
+  font-size: large;
+  margin-top: 6px;
+  margin-bottom: 3px;
+  cursor: pointer;
+}
+
+button:hover{
+  background-color: #c3a537;
+  color: white;
+}
+
+.app{
+  width: calc(100% - 6px);
+  background-color: #d9ba4a;
+  color: white;
+  padding: 6px;
+  border: none;
+  border-radius: 6px;
+  text-align: left;
+  font-size: large;
+  margin-bottom: 6px;
+}
+
+hr{
+  width: 100%;
+  border: 1px solid #393004;
+  border-radius: 3px;
+  margin: 6px;
+}
+
+.material-symbols-outlined{
+  float: left;
+  font-size: large;
+  margin-right: 3px;
+}
+
+.wallpaper{
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  transition: 0.5s;
+  margin-bottom: 6px;
+}
+
+.chosenWallpaper{
+  transition: 0.5s;
+  outline: 12px solid #c3a537;
+}
+
+.appimg{
+  float: left;
+  height: 18px;
+  border-radius: 3px;
+  margin-right: 3px;
+}
+
+.uninstall{
+  color: red;
+}
+
+.right{
+  float: right;
+}
+
+#ti{
+  width: 100%;
+}
+
+/* Scroll bar */
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #E0C35A;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #e6e6e6;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #c5c09b;
+}

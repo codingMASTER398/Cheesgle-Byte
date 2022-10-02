@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Settings</title>
+
+  <link href="./style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+  <script defer src="./script.js"></script>
+</head>
+
+<body>
+  <div id="home">
+    <img id="ti" src="/sys/img/cheesgle_byte_one.png">
+    <hr>
+    <button onclick="to('wallpaper')">
+      <span class="material-symbols-outlined">wallpaper</span>
+      Wallpaper
+    </button>
+    <button onclick="to('replit')">
+      <span class="material-symbols-outlined">person</span>
+      Replit
+    </button>
+    <button onclick="to('internet')">
+      <span class="material-symbols-outlined">wifi</span>
+      Internet
+    </button>
+    <button onclick="to('apps')">
+      <span class="material-symbols-outlined">dashboard</span>
+      Apps
+    </button>
+    <button onclick="to('info')">
+      <span class="material-symbols-outlined">info</span>
+      System info
+    </button>
+    <hr>
+    <p>Cheesgle Byte One v1</p>
+  </div>
+  <div id="wallpaper" hidden>
+    <h2>Set your wallpaper</h2>
+    <button onclick="to('home')">
+      <span class="material-symbols-outlined">arrow_back</span>
+      Back
+    </button>
+    <hr>
+    <img class="wallpaper" src="/wallpapers/5.png">
+    <img class="wallpaper" src="/wallpapers/1.jpg">
+    <img class="wallpaper" src="/wallpapers/2.jpg">
+    <img class="wallpaper" src="/wallpapers/3.jpg">
+    <img class="wallpaper" src="/wallpapers/4.jpg">
+    <img class="wallpaper" src="/wallpapers/6.png">
+    <img class="wallpaper" src="/wallpapers/7.png">
+    <img class="wallpaper" src="/wallpapers/8.png">
+  </div>
+
+  <div id="internet" hidden>
+    <h2>Internet connection</h2>
+    <button onclick="to('home')">
+      <span class="material-symbols-outlined">arrow_back</span>
+      Back
+    </button>
+    <hr>
+    <p id="internetText">Testing internet...</p>
+  </div>
+  <div id="replit" hidden>
+    <h2>Replit</h2>
+    <button onclick="to('home')">
+      <span class="material-symbols-outlined">arrow_back</span>
+      Back
+    </button>
+    <hr>
+    
+    <p>Signing in to Byte with your Replit account allows for extra features on the system and in apps.</p>
+    <p id="replitStatus">Checking...</p>
+    <hr>
+    <button onclick="replit()">
+      <span class="material-symbols-outlined">manage_search</span>
+      Log in/Refresh info
+    </button>
+  </div>
+  <div id="apps" hidden>
+    <h2>Applications</h2>
+    <button onclick="to('home')">
+      <span class="material-symbols-outlined">arrow_back</span>
+      Back
+    </button>
+    <hr>
+    <p>All apps, including the system, automatically update.</p>
+    <div id="appsContainer">
+    </div>
+  </div>
+  <div id="info" hidden>
+    <h2>System information</h2>
+    <button onclick="to('home')">
+      <span class="material-symbols-outlined">arrow_back</span>
+      Back
+    </button>
+    <hr>
+    <img style="width: 100%;" src="/sys/img/cheesgle_byte_one.png">
+    <p>
+      Cheesgle Byte One v1
+      <br>
+      © Lachlan Noble (coding398, codingMASTER398) 2022 (MIT license)
+    </p>
+    <button onclick="reset()">
+      <span class="material-symbols-outlined">device_reset</span>
+      Reset device
+    </button>
+    <p>To fully reset your device, remove Replit from Byte by clearing your cookies for Byte, including REPL_AUTH.</p>
+  </div>
+</body>
+
+</html>

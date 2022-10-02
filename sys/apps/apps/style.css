@@ -1,0 +1,105 @@
+body{
+  background-color: #FFE380;
+  margin: 24px;
+  font-family: system-ui;
+}
+
+body h2{
+  margin: 0;
+}
+
+.app{
+  width: 95%;
+  padding: 6px;
+  height: 8vh;
+  background-color: #E0C35A;
+  border-radius: 6px;
+  margin-top: 6px;
+  font-size: xx-small;
+  cursor: pointer;
+}
+
+.app:hover{
+  background-color: #dab944;
+}
+
+.app h3{
+  font-size: small;
+  display: contents;
+}
+
+.app h3, p{
+  margin: 1px;
+  text-overflow: ellipsis;
+  white-space: normal;
+  overflow: hidden;
+  height: 47.5%;
+  margin-top: 6px;
+}
+
+.app img{
+  float: left;
+  height: 100%;
+  border-radius: 6px;
+  margin-right: 8px;
+}
+
+.categoryRight{
+  float: right;
+  margin: 2px;
+  font-size: x-small;
+}
+
+#appIcon{
+  float: left;
+}
+
+button{
+  background-color: #E0C35A;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  padding: 3px;
+}
+
+button:hover{
+  background-color: #d7b63c;
+}
+
+#top img{
+  border-radius: 12px;
+  margin-right: 8px;
+  max-height: 10vh
+}
+
+#top{
+  display:flex;
+  align-items:center;
+}
+
+hr{
+  border: 1px solid black;
+}
+
+#screenshot{
+  margin-left:auto;
+  margin-right:auto;
+  height:75%;
+  max-width: 100%;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.material-symbols-outlined{
+  font-size: smaller !important;
+  margin-right: 3px;
+}
+
+.back{
+  margin:0;
+  font-size: small !important;
+  text-align: center;
+  margin-bottom: 6px;
+}

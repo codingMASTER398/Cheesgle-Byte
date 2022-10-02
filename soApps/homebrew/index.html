@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
+    body {
+      font-family: 'IBM Plex Sans';
+      background: #4a9ebb;
+      color:white;
+    }
+
+    .header {
+      font-size: 30px;
+      font-weight: bold;
+      display: flex;
+      align-content: center;
+      flex-wrap: wrap;
+      flex-direction: column;
+    }
+
+    .app-title {
+      font-size: 17px;
+      font-weight: 300;
+      display: flex;
+      align-content: center;
+      flex-wrap: wrap;
+      flex-direction: column;
+    }
+
+    #apps {
+      padding: 0;
+      margin: 0;
+    }
+
+    #apps li {
+      margin: 0;
+      display: flex;
+      padding: 10px;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: row;
+    }
+
+    .app-icon {
+      width: 41px;
+      height: 41px;
+      border-radius: 50%;
+      margin: 0;
+    }
+
+    ul {
+      list-style-type: none;
+    }
+
+    #App {
+      display: flex;
+      position: fixed;
+      bottom: 30px;
+      overflow: hidden;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 10px;
+    }
+    
+    input,button[type=submit] {
+      background-color: #ffffff;
+      padding-left:3px;
+      padding-right:3px;
+    }
+    
+    button[type=submit] {   
+      border-radius: 50%;
+    }
+  </style>
+  <script src="https://kit.fontawesome.com/56d92a5ebc.js" crossorigin="anonymous"></script>  
+</head>
+
+<body>
+  <span class="header">Homebrew</span>
+  <ul id="apps"></ul>
+  <div id="App">
+    <input type="text" id="url" autocomplete="off" placeholder="Enter the app's URL...">
+    <button type="submit" id="smbt" onclick="addApp(document.getElementById('url').value)"><i class="fa-solid fa-plus" style></i></button>    
+  </div>
+
+  <script>
+    let storage;
+    let appsList = document.getElementById('apps')
+    
+    try {
+      storage = window.parent.localStorage;
+    } catch (err) {
+      document.body.innerHTML = '<span class="header">Error</span><br><span>This app does not have the "sameOrigin" permission, therefore it cannot work properly.</span>'
+      throw err
+    }
+
+    let apps = JSON.parse(storage.apps)
+    function updateList() {
+      appsList.innerHTML = ""
+      apps.forEach(async app => {
+        let li = document.createElement('li')
+        const json = await fetch(app + '/package.json').then(res => res.json())
+  
+        li.innerHTML = `<img class="app-icon" src="${json.icon ? app + '/' + json.icon : 'https://one.byte.cheesgle.com/sys/img/unknown.png'}" onerror="this.src='https://one.byte.cheesgle.com/sys/img/unknown.png'">`
+
+        let e = document.createElement('span')
+        e.className="app-title"
+        e.innerText = `${json.title} (v${json.version})`
+
+        li.appendChild(e)
+  
+        li.onclick = () => window.removeApp(app)
+  
+        appsList.appendChild(li)
+      })
+    }
+
+    function addApp(URL) {    
+      apps.push(URL)
+  
+      storage.apps = JSON.stringify(apps)
+      updateList();
+    }
+
+    function removeApp(URL) {
+      let i = apps.indexOf(URL)
+      if (i == -1) return;
+      apps.splice(i, 1)
+      storage.apps = JSON.stringify(apps)
+      updateList();
+    }
+
+    updateList();
+  </script>
+</body>
+
+</html>

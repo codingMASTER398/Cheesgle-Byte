@@ -1,0 +1,14 @@
+{
+  "v": 0,
+  "title": "Home",
+  "description": "Home screen",
+  "author": "Cheesgle",
+  "version": 1,
+  "homepage": "",
+  "repository": "",
+
+  "type": "html",
+  "entrypoint": "index.html",
+  
+  "permissions":["sameOrigin","openOtherApps","noHomeButton"]
+}
