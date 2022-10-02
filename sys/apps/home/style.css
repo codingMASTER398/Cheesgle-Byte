@@ -7,6 +7,13 @@ body{
   padding-top: 12px;
   font-family: system-ui;
   background-position: center;
+  
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar { 
+  display: none;
 }
 
 #top{
