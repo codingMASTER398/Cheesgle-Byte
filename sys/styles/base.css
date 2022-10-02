@@ -94,6 +94,8 @@ body{
   color: #F5F9FC;
   font-family: monospace;
   display: inline-block;
+  
+  transition: 0.5s;
 }
 
 #topNotch *{
