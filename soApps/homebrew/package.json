@@ -12,6 +12,8 @@
   "icon": "homebrew.png",
   
   "permissions":["sameOrigin"],
+  
+  "color":"#4a9ebb",
 
   "soLocation":"/soApps/homebrew/"
 }
