@@ -46,7 +46,8 @@ phoneFrame.height = phone.clientHeight - 20
 // Notch
 let notchTime = $(`#notchTime`)[0],
   notchCellularBars = $(`#cellularBars`)[0],
-  loggedInIcon = $(`.loggedInIcon`)[0];
+  loggedInIcon = $(`.loggedInIcon`)[0],
+  notch = $(`#topNotch`)[0];
 
 function updateNotchText() {
   notchTime.innerText = `${new Date().toLocaleTimeString('default', {
@@ -134,9 +135,9 @@ function startApp(location) {
       currentAppTitle = pkg.title
       currentAppPermissions = pkg.permissions
       if (pkg.color || pkg.colour) {
-        document.getElementById('topNotch').style.backgroundColor = pkg.color || pkg.colour
+        notch.css('background-color', pkg.color || pkg.colour)
       } else {
-        document.getElementById('topNotch').style.backgroundColor = '#e69e19'
+        notch.css('background-color', '#e69e19')
       }
 
       if (pkg.permissions.includes(`noHomeButton`)) {
