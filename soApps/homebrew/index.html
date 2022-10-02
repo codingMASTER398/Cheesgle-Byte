@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+  <link href="./style.css" rel="stylesheet" type="text/css" />
+  <script defer src="./script.js"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
     body {
@@ -16,6 +19,12 @@
       align-content: center;
       flex-wrap: wrap;
       flex-direction: column;
+    }
+
+    .disclaimer {
+      background-color: #3b7e95;
+      display: block;
+      padding: 5px;
     }
 
     .app-title {
@@ -76,7 +85,8 @@
 </head>
 
 <body>
-  <span class="header">Homebrew</span>
+  <span class="header">Homebrew</span><br>
+  <span class="disclaimer"><strong>Disclaimer:</strong> Any apps you install via the Homebrew app can be dangerous and/or malicious! Make sure you know what you're installing before you install it!</span>
   <ul id="apps"></ul>
   <div id="App">
     <input type="text" id="url" autocomplete="off" placeholder="Enter the app's URL...">
