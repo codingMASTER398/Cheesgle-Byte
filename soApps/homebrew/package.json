@@ -3,17 +3,14 @@
   "title": "Homebrew",
   "description": "Install apps from other locations on your Cheesgle Byte",
   "author": "DaInfLoop",
-  "version": 0.1,
+  "version": 0.2,
 
   "category": "Utility",
   "screenshot": "screenshot.png",
 
   "entrypoint": "index.html",
   "icon": "homebrew.png",
+  "color": "#4a9ebb",
   
-  "permissions":["sameOrigin"],
-  
-  "color":"#4a9ebb",
-
-  "soLocation":"/soApps/homebrew/"
+  "permissions":["manageApps"]
 }
