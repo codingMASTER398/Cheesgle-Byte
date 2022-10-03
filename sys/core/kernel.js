@@ -2,7 +2,7 @@ console.info(`[KERNEL] Script start`)
 
 // Phone object
 let phoneInfo = {
-  version: 0.1,
+  version: 1.1,
   name: 'Cheesgle Byte One',
   contributors: `coding398`,
   isLoggedIn: false
@@ -198,21 +198,25 @@ window.addEventListener("message", (event) => {
       case "installApp":
         if (currentAppPermissions.includes(`manageApps`)) {
           if (data.app) {
-            if(!apps.includes(data.app)){
-              apps.push(data.app)
+            let a = JSON.parse(localStorage.getItem(`apps`))
+            if(!a.includes(data.app)){
+              a.push(data.app)
             }
+            localStorage.setItem(`apps`, JSON.stringify(a))
           } else console.error(`[KERNEL] App requested to install app but app wasn't provided`)
         } else console.error(`[KERNEL] App requested to install app but app didn't have manageApps permission`)
         break;
       case "uninstallApp":
         if (currentAppPermissions.includes(`manageApps`)) {
           if (data.app) {
-            if(apps.includes(data.app)){
-              let index = apps.indexOf(data.app);
+            let a = JSON.parse(localStorage.getItem(`apps`))
+            if(a.includes(data.app)){
+              let index = a.indexOf(data.app);
               if (index > -1) {
-                apps.splice(index, 1);
+                a.splice(index, 1);
               }
             }
+            localStorage.setItem(`apps`, JSON.stringify(a))
           } else console.error(`[KERNEL] App requested to uninstall app but app wasn't provided`)
         } else console.error(`[KERNEL] App requested to uninstall app but app didn't have manageApps permission`)
         break;
