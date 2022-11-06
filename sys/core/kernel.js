@@ -152,7 +152,7 @@ function startApp(location) {
           package: pkg,
           phone: phoneInfo,
           phoneApps: apps,
-          savedAppData: (localStorage.getItem(`store:${location}`) | null)
+          savedAppData: (localStorage.getItem(`store:${location}`) || null) // ty LuisAFK for noticing a bug here
         }
 
         phoneFrame.contentWindow.postMessage(JSON.parse(JSON.stringify(dataToPass)), "*")
