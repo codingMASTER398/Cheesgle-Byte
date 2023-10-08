@@ -1,5 +1,5 @@
 const homeAppTemplate = `<div class="app">
-  <img src="https://cheesgle-apps.codingmaster398.repl.co/apps/calc/icon.png">
+  <img src="https://appserver.cheesgle.com/apps/calc/icon.png">
   <h3>Calculator</h3>
   <p class="categoryRight">Utility</p>
   <p>A basic calculator for your Cheesgle Byte.</p>
@@ -8,7 +8,7 @@ const homeAppTemplate = `<div class="app">
 const appTemplate=  `
     <button class='back'><span class="material-symbols-outlined">arrow_back</span> Back</button>
     <div id="top">
-      <img src="https://cheesgle-apps.codingmaster398.repl.co/apps/calc/icon.png" id="appIcon">
+      <img src="https://appserver.cheesgle.com/apps/calc/icon.png" id="appIcon">
       <h2>Calculator<br><button id="stall">Install</button></h2>
     </div>
     <h4>A basic calculator for your Cheesgle Byte.</h4>
@@ -16,7 +16,7 @@ const appTemplate=  `
     <hr>
     <span id="permissions">No permissions required</span>
     <hr>
-    <img src="https://cheesgle-apps.codingmaster398.repl.co/apps/calc/screenshot.png" id="screenshot">`
+    <img src="https://appserver.cheesgle.com/apps/calc/screenshot.png" id="screenshot">`
 
 let homeApps = document.getElementById(`homeApps`),
   info = document.getElementById(`info`),
@@ -38,7 +38,7 @@ function createElementFromHTML(htmlString) {
 }
 
 function fetchHomeApps() {
-  fetch(`https://cheesgle-apps.codingmaster398.repl.co/all`).then(async (r) => {
+  fetch(`https://appserver.cheesgle.com/all`).then(async (r) => {
     if (r.status == 200) {
       let json = await r.json()
       homeApps.innerHTML = ``
@@ -46,7 +46,7 @@ function fetchHomeApps() {
         let html = createElementFromHTML(homeAppTemplate)
         let app = json[i][1]
 
-        let appPath = app.soLocation ? app.soLocation : `https://cheesgle-apps.codingmaster398.repl.co/apps/${json[i][0]}`
+        let appPath = app.soLocation ? app.soLocation : `https://appserver.cheesgle.com/apps/${json[i][0]}`
         
         html.getElementsByTagName(`img`)[0].src = `${appPath}/${app.icon}`
         
@@ -121,7 +121,7 @@ function fetchHomeApps() {
               localStorage.setItem(`apps`, JSON.stringify(lcpa))
 
               console.log(`Install`)
-              fetch(`https://cheesgle-apps.codingmaster398.repl.co/install/${json[i][0]}`).then(()=>{}).catch(()=>{})
+              fetch(`https://appserver.cheesgle.com/install/${json[i][0]}`).then(()=>{}).catch(()=>{})
               
               info.hidden = true
               appsContainer.hidden = false
