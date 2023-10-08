@@ -58,8 +58,8 @@ function startOOBE(data){
         parent.postMessage({type:"close"},"*")
       }else{
         localStorage.setItem(`wallpaper`,`/wallpapers/5.png`)
-        localStorage.setItem(`apps`,`["https://cheesgle-apps.codingmaster398.repl.co/apps/cheesgle"]`)
-        fetch(`https://cheesgle-apps.codingmaster398.repl.co/install/cheesgle`).then(()=>{}).catch(()=>{})
+        localStorage.setItem(`apps`,`["https://appserver.cheesgle.com/apps/cheesgle"]`)
+        fetch(`https://appserver.cheesgle.com/install/cheesgle`).then(()=>{}).catch(()=>{})
         
         mainContent.innerHTML = `
         <h2>Welcome to Byte</h2> 
